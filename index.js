@@ -258,6 +258,10 @@ const users = [
         }
       }
     ]
+
+    app.get('/',(req,res)=>{
+      res.send("welcome to our webserver")
+  })
     app.get('/about',(req,res)=>{
       res.send("about page")
   })
@@ -289,6 +293,6 @@ app.put('users/:id',(req,res)=>{
     res.status(200).send("user addded");
 })
 
-app.listen(3000,()=>{
+app.listen(5000,()=>{
     console.log("server is up and run at http://localhost:3000")
 })
