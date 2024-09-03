@@ -258,14 +258,13 @@ const users = [
         }
       }
     ]
-
-
-app.get('/',(req,res)=>{
-    res.send("welcome to our web server")
+    app.get('/about',(req,res)=>{
+      res.send("about page")
+  })
+  app.get('/home',(req,res)=>{
+    res.send("home page")
 })
-app.get('/users',(req,res)=>{
-    res.send(JSON.stringify(users))
-})
+
 app.get('/users/:id',(req,res)=>{
   console.log(req.params);
   const user = users.find(item => item.id === parseInt(req.params.id));
